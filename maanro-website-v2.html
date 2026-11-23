@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maanro - AI-Powered Brand Growth & Strategies</title>
+    <meta name="description" content="Maanro - AI-powered brand growth venture offering strategic business planning and client acquisition services. Grow with Honour. Scale with Intelligence.">
+    <meta property="og:title" content="Maanro - AI-Powered Brand Growth & Strategies">
+    <meta property="og:description" content="Maanro - AI-powered brand growth venture offering strategic business planning and client acquisition services. Grow with Honour. Scale with Intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maanro.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maanro - AI-Powered Brand Growth & Strategies">
+    <meta name="twitter:description" content="Maanro - AI-powered brand growth venture offering strategic business planning and client acquisition services. Grow with Honour. Scale with Intelligence.">
+    <meta name="theme-color" content="#080808">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian-black: #080808;
+            --growth-green: #32CD32;
+            --pure-black: #000000;
+            --graphite: #171A17;
+            --deep-forest: #263326;
+            --soft-lime: #A7ECA7;
+            --cloud-white: #F4F7F4;
+            --slate-grey: #A1AAA1;
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.25rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 2rem;
+            --fs-3xl: 3rem;
+            --fs-4xl: 4rem;
+            --font-display: "Playfair Display", "Georgia", "Baskerville", "Times New Roman", serif;
+            --font-body: "Inter", "Segoe UI", "Tahoma", "Arial", sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); line-height: 1.6; color: var(--obsidian-black); background-color: var(--cloud-white); }
+        a { text-decoration: none; color: inherit; }
+        a:hover { color: var(--growth-green); }
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); z-index: 9999; }
+        .skip-link:focus { position: fixed; left: 2rem; top: 2rem; width: auto; height: auto; padding: 0.8rem 1.2rem; background: var(--obsidian-black); color: var(--cloud-white); z-index: 9999; font-size: var(--fs-lg); }
+        header { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(8, 8, 8, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: background 0.3s ease, backdrop-filter 0.3s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        header.scrolled { background: rgba(8, 8, 8, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: var(--cloud-white); transition: all 0.3s ease; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--cloud-white); font-size: 1rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--growth-green); }
+        .mobile-nav { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: var(--obsidian-black); padding: 2rem; z-index: 99; }
+        .mobile-nav.active { display: block; }
+        .mobile-nav a { display: block; padding: 1rem 0; color: var(--cloud-white); border-bottom: 1px solid var(--graphite); }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 12rem; position: relative; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, var(--growth-green) 0%, var(--obsidian-black) 100%); opacity: 0.3; z-index: -1; }
+        .hero .logo { font-family: var(--font-display); font-size: 4rem; font-weight: 700; color: var(--cloud-white); margin-bottom: 1rem; display: block; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; color: var(--cloud-white); }
+        .hero h1 .accent { color: var(--growth-green); }
+        .hero .tagline { font-size: 1.5rem; color: var(--slate-grey); margin-bottom: 2rem; font-style: italic; }
+        .hero .cta-primary { display: inline-block; background: var(--growth-green); color: var(--obsidian-black); padding: 1rem 2rem; border-radius: 0; font-weight: bold; font-size: 1.1rem; transition: background 0.3s; white-space: nowrap; }
+        .hero .cta-primary:hover { background: #2a7b1a; }
+        .hero .cta-secondary { display: inline-block; background: transparent; color: var(--cloud-white); padding: 1rem 2rem; border: 2px solid var(--growth-green); border-radius: 0; font-size: 1.1rem; transition: background 0.3s, color 0.3s; white-space: nowrap; }
+        .hero .cta-secondary:hover { background: var(--growth-green); color: var(--obsidian-black); }
+        .scroll-cue { position: absolute; bottom: 3rem; color: var(--slate-grey); font-size: var(--fs-sm); animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100%, 20%, 50%, 80% { transform: translateY(0); } 40%, 70% { transform: translateY(10px); } }
+        section { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--obsidian-black); padding-bottom: 0.5rem; border-bottom: 2px solid var(--graphite); }
+        section h2 .accent { color: var(--growth-green); }
+        .section-light { background-color: var(--cloud-white); }
+        .section-dark { background-color: var(--obsidian-black); color: var(--cloud-white); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+        .card { background: var(--obsidian-black); color: var(--cloud-white); border-radius: 8px; padding: 1.5rem; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--growth-green); }
+        .plan-a { background: linear-gradient(135deg, var(--obsidian-black) 0%, var(--graphite) 100%); color: var(--cloud-white); }
+        .tier-one { background: var(--growth-green); color: var(--obsidian-black); }
+        .tier-two { background: var(--deep-forest); color: var(--cloud-white); }
+        .tier-three { background: var(--pure-black); color: var(--cloud-white); }
+        .plan-b { background: var(--obsidian-black); color: var(--cloud-white); }
+        .service-feature { margin-bottom: 1rem; }
+        .service-feature strong { color: var(--accent); }
+        .avatar { background: var(--growth-green); color: var(--obsidian-black); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto; }
+        .stat { text-align: center; padding: 1rem; }
+        .stat-number { font-size: 2rem; font-weight: bold; display: block; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .contact-form .form-group { margin-bottom: 1.5rem; }
+        .contact-form label { display: block; margin-bottom: 0.5rem; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--graphite); border-radius: 4px; background: var(--cloud-white); color: var(--obsidian-black); }
+        .contact-form button { background: var(--growth-green); color: var(--obsidian-black); padding: 1rem 2rem; border: none; border-radius: 0; font-weight: bold; cursor: pointer; width: 100%; }
+        .contact-form button:hover { background: #2a7b1a; }
+        footer { background: var(--obsidian-black); color: var(--cloud-white); text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; }
+            .mobile-nav a { color: var(--obsidian-black); background: var(--cloud-white); }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                MAANRO
+                <span class="accent">Grow with Honour.</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-nav" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#plans">Plans</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    <main id="main-content">
+        <section class="hero" id="home">
+            <!-- Embedded base64 logo SVG -->
+            <div class="logo">
+                <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="logoClip">
+                            <rect width="400" height="225"/>
+                        </clipPath>
+                    </defs>
+                    <image href="data:image/png;base64,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..." width="400" height="225" clip-path="url(#logoClip)" preserveAspectRatio="xMidYMid slice"/>
+                    <text x="200" y="200" fill="var(--obsidian-black)" font-family="Playfair Display, Georgia, serif" font-size="72" text-anchor="middle" dominant-baseline="middle">MAANRO</text>
+                </svg>
+                <span class="accent">Grow with Honour.</span>
+            </div>
+            <h1>AI-Powered <span class="accent">Brand Growth</span> & Strategies</h1>
+            <p class="tagline">Grow with Honour. Scale with Intelligence.</p>
+            <a href="#plans" class="cta-primary">Explore Our Plans</a>
+            <a href="#plans" class="cta-secondary">Learn More</a>
+            <div class="scroll-cue">Scroll down</div>
+        </section>
+        <section id="about" class="section-light">
+            <div class="grid-2">
+                <div class="card">
+                    <h2>About Maanro</h2>
+                    <p>Maanro is an AI-powered brand growth venture operating locally in India without online registration costs. We keep overhead minimal and direct all resources toward client delivery and measurable growth.</p>
+                    <p><strong>Founder:</strong> Rohit &mdash; former advertising professional, now AI venture builder</p>
+                    <p><strong>Public Face:</strong> Rohit as sole face of Maanro; specialist team operates behind scenes, activated per project</p>
+                    <p><strong>Brand Colours:</strong> Obsidian Black #080808 + Growth Green #32CD32 (60/30/10 allocation with 6 supporting colours)</p>
+                </div>
+                <div class="card">
+                    <h2>Our Approach</h2>
+                    <p>We employ a multi-channel research methodology (Google Search, Startup India Bhaskar, Direct Referrals, B2B Directories, Government Portals, Industry Associations, Cold Email, Campus Connect) to identify clients across India. All work follows the GSD Core phase loop: DISCUSS &rarr; PLAN &rarr; EXECUTE &rarr; VERIFY &rarr; SHIP.</p>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section-dark">
+            <h2>Our Services</h2>
+            <div class="grid-2">
+                <div class="card plan-a">
+                    <h3>Plan A: Business Clients &mdash; Three-Tier Model</h3>
+                    <div class="tier-one">
+                        <strong>Tier 1 &mdash; Ideation:</strong> &nbsp;₹28,750 one-time upfront (standard) | ₹14,375 one-time upfront (50% introductory for first 3 clients)<br>
+                        <small>No monthly recurring charges | 3-month engagement</small>
+                    </div>
+                    <div class="tier-two">
+                        <strong>Tier 2 &mdash; Accelerate:</strong> &nbsp;₹57,500 one-time upfront (standard) | ₹28,750 one-time upfront (50% introductory for first 3 clients)<br>
+                        <small>No monthly recurring charges | 6-month engagement</small>
+                    </div>
+                    <div class="tier-three">
+                        <strong>Tier 3 &mdash; Transform:</strong> &nbsp;₹1,15,000 one-time upfront + 5% performance-based component (on client revenue growth, paid post-engagement) | ₹57,500 one-time upfront + 5% performance (first 3 clients)<br>
+                        <small>No monthly recurring charges | 12-month engagement</small>
+                    </div>
+                </div>
+                <div class="card plan-b">
+                    <h3>Plan B: Individual Clients &mdash; &nbsp;₹2,500 One-Time Resume/CV Analysis</h3>
+                    <p>For job seekers, professionals seeking career growth, and those looking to switch roles.</p>
+                    <ul>
+                        <li><strong>Price:</strong> &nbsp;₹2,500 one-time upfront &mdash; single payment, no monthly commitments</li>
+                        <li><strong>Deliverable:</strong> &nbsp;Full resume/CV analysis &mdash; 15-minute analysis, key strengths, 3 improvement areas, industry/role matching, salary benchmark range, skill gap analysis (3 skills), LinkedIn profile optimization, 90-day action plan</li>
+                        <li><strong>File Format:</strong> &nbsp;.docx or .xlsx (not markdown &mdash; all 6 files already converted and verified)</li>
+                        <li><strong>Delivery:</strong> &nbsp;Within 5 business days of resume receipt + payment</li>
+                        <li><strong>No Track Backs:</strong> &nbsp;Exactly as agreed: one-and-done engagement. No follow-up emails, no check-ins, no ongoing support. After report delivery + one optional revision (within 7 days, max 30-minute adjustment), engagement is complete.</li>
+                        <li><strong>Upsell:</strong> &nbsp;If client wants more &rarr; Offer Plan A Tier 1 (₹28,750) if client is a founder seeking brand strategy.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="plans" class="section-light">
+            <h2>Plan Comparison</h2>
+            <div class="grid-3">
+                <div class="card" style="background: var(--obsidian-black); color: var(--cloud-white);">
+                    <h3>Plan A: Business</h3>
+                    <p>Startups & SMEs in India &mdash; 3 avatar segments (Curious Founder <10L ARR, Growth-Seeking SME 10L-50L ARR, Established Player 50L-2Cr+ ARR)</p>
+                    <p>Google search client acquisition via 10 keywords, 30+ businesses identified</p>
+                    <p>50% introductory rates for first 3 clients</p>
+                    <p>No monthly recurring charges at any tier</p>
+                </div>
+                <div class="card" style="background: var(--obsidian-black); color: var(--cloud-white);">
+                    <h3>Plan B: Individual</h3>
+                    <p>Job seekers, professionals seeking career growth, low-pay workers wanting to switch roles</p>
+                    <p>&nbsp;₹2,500 one-time upfront &mdash; single payment, no monthly commitments</p>
+                    <p>No track backs &mdash; one-and-done engagement</p>
+                    <p>File format: .docx or .xlsx only</p>
+                </div>
+                <div class="card" style="background: var(--growth-green); color: var(--obsidian-black);">
+                    <h3>Pilot Program</h3>
+                    <p>3-5 business clients (Months 1-3): work free initially until growth demonstrated, then charge based on milestones (revenue growth &ge;20% MoM, client acquisition, operational efficiency, team scalability, value perception &ge;7/10)</p>
+                    <p>&nbsp;First 10 individual clients (Plan B) at ₹2,500 introductory rate. After 10 clients, rate review: ₹3,000 or ₹4,000.</p>
+                    <p>Minimum 3 research channels represented in pilot intake</p>
+                </div>
+            </div>
+            <p class="pilot-note">* Pilot program details: milestone-based transition for business clients; introductory rate for first 10 individual Plan B clients.</p>
+        </section>
+        <section id="contact" class="section-dark">
+            <h2>Contact Maanro</h2>
+            <p>Email: <a href="mailto:maanroadvertising@gmail.com">maanroadvertising@gmail.com</a></p>
+            <p>Hybrid email setup: Anonymous IMAP read-only mode for reading incoming emails + Gmail REST API for sending FROM maanroadvertising@gmail.com (tested successful, Message ID: 1a1f37c0bfe0c392)</p>
+            <form class="contact-form" action="#">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Which Plan Are You Interested In?</label>
+                    <select required>
+                        <option value="">Select...</option>
+                        <option value="plan-a">Plan A: Business (Three-Tier Model)</option>
+                        <option value="plan-b">Plan B: Individual (₹2,500 Resume Analysis)</option>
+                    </select>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Maanro - AI-Powered Brand Growth & Strategies Company. All rights reserved.</p>
+        <p>Brand Colours: Obsidian Black #080808 + Growth Green #32CD32 | Tagline: Grow with Honour. Scale with Intelligence.</p>
+    </footer>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileNav = document.querySelector('.mobile-nav');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                if (navLinks) navLinks.classList.toggle('active');
+                if (mobileNav) mobileNav.classList.toggle('active');
+            });
+        }
+        const navItems = document.querySelectorAll('.nav-links a, .mobile-nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (hamburger) {
+                    hamburger.classList.remove('active');
+                    if (navLinks) navLinks.classList.remove('active');
+                    if (mobileNav) mobileNav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

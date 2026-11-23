@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maanro - AI-Powered Brand Growth & Strategies</title>
+    <style>
+        :root {
+            --obsidian-black: #080808;
+            --growth-green: #32CD32;
+            --pure-black: #000000;
+            --graphite: #171A17;
+            --deep-forest: #263326;
+            --soft-lime: #A7ECA7;
+            --cloud-white: #F4F7F4;
+            --slate-grey: #A1AAA1;
+            --font-primary: var(--obsidian-black);
+            --font-secondary: var(--cloud-white);
+            --accent: var(--growth-green);
+            --bg-primary: var(--cloud-white);
+            --bg-secondary: var(--obsidian-black);
+            --bg-accent: var(--growth-green);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--font-primary);
+            background-color: var(--bg-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--font-primary);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            background: var(--bg-secondary);
+            color: var(--font-primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .accent {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--obsidian-black) 100%);
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .accent {
+            color: var(--accent);
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--font-secondary);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--obsidian-black);
+            padding: 1rem 2rem;
+            border-radius: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .hero .cta-button:hover {
+            background: var(--growth-green);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--bg-secondary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--graphite);
+        }
+
+        section h2 .accent {
+            color: var(--accent);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .plan-a {
+            background: linear-gradient(135deg, var(--obsidian-black) 0%, var(--graphite) 100%);
+            color: var(--cloud-white);
+        }
+
+        .tier-one { background: var(--growth-green); color: var(--obsidian-black); }
+        .tier-two { background: var(--deep-forest); color: var(--cloud-white); }
+        .tier-three { background: var(--pure-black); color: var(--cloud-white); }
+
+        .plan-b { background: var(--obsidian-black); color: var(--cloud-white); }
+
+        .service-feature { margin-bottom: 1rem; }
+
+        .service-feature strong { color: var(--accent); }
+
+        .avatar {
+            background: var(--growth-green);
+            color: var(--obsidian-black);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+
+        .stat { text-align: center; padding: 1rem; }
+
+        .stat-number { font-size: 2rem; font-weight: bold; display: block; }
+
+        .contact-form { max-width: 600px; margin: 0 auto; }
+
+        .contact-form .form-group { margin-bottom: 1.5rem; }
+
+        .contact-form label { display: block; margin-bottom: 0.5rem; }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 0.8rem; border: 1px solid var(--graphite); border-radius: 4px; background: var(--cloud-white); color: var(--font-primary);
+        }
+
+        .contact-form button {
+            background: var(--accent); color: var(--obsidian-black); padding: 1rem 2rem; border: none; border-radius: 0; font-weight: bold; cursor: pointer; width: 100%;
+        }
+
+        .contact-form button:hover { background: var(--growth-green); }
+
+        footer {
+            background: var(--bg-secondary); color: var(--font-primary); text-align: center; padding: 2rem; margin-top: 4rem; font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                MAANRO
+                <span class="accent">Grow with Honour.</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>AI-Powered <span class="accent">Brand Growth</span> & Strategies</h1>
+        <p class="tagline">Grow with Honour. Scale with Intelligence.</p>
+        <a href="#plans" class="cta-button">Explore Our Plans</a>
+    </section>
+
+    <section id="about">
+        <div class="grid-2">
+            <div class="card">
+                <h2>About Maanro</h2>
+                <p>Maanro is an AI-powered brand growth venture operating locally in India without online registration costs. We keep overhead minimal and direct all resources toward client delivery and measurable growth.</p>
+                <p><strong>Founder:</strong> Rohit — former advertising professional, now AI venture builder</p>
+                <p><strong>Public Face:</strong> Rohit as sole face of Maanro; specialist team operates behind scenes, activated per project</p>
+                <p><strong>Brand Colours:</strong> Obsidian Black #080808 + Growth Green #32CD32 (60/30/10 allocation with 6 supporting colours)</p>
+            </div>
+
+            <div class="card">
+                <h2>Our Approach</h2>
+                <p>We employ a multi-channel research methodology (Google Search, Startup India Bhaskar, Direct Referrals, B2B Directories, Government Portals, Industry Associations, Cold Email, Campus Connect) to identify clients across India. All work follows the GSD Core phase loop: DISCUSS → PLAN → EXECUTE → VERIFY → SHIP.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="grid-2">
+            <div class="card plan-a">
+                <h3>Plan A: Business Clients — Three-Tier Model</h3>
+                <div class="tier-one">
+                    <strong>Tier 1 — Ideation:</strong> ₹28,750 one-time upfront (standard) | ₹14,375 one-time upfront (50% introductory for first 3 clients)<br>
+                    <small>No monthly recurring charges | 3-month engagement</small>
+                </div>
+                <div class="tier-two">
+                    <strong>Tier 2 — Accelerate:</strong> ₹57,500 one-time upfront (standard) | ₹28,750 one-time upfront (50% introductory for first 3 clients)<br>
+                    <small>No monthly recurring charges | 6-month engagement</small>
+                </div>
+                <div class="tier-three">
+                    <strong>Tier 3 — Transform:</strong> ₹1,15,000 one-time upfront + 5% performance-based component (on client revenue growth, paid post-engagement) | ₹57,500 one-time upfront + 5% performance (first 3 clients)<br>
+                    <small>No monthly recurring charges | 12-month engagement</small>
+                </div>
+            </div>
+
+            <div class="card plan-b">
+                <h3>Plan B: Individual Clients — ₹2,500 One-Time Resume/CV Analysis</h3>
+                <p>For job seekers, professionals seeking career growth, and those looking to switch roles.</p>
+                <ul>
+                    <li><strong>Price:</strong> ₹2,500 one-time upfront — single payment, no monthly commitments</li>
+                    <li><strong>Deliverable:</strong> Full resume/CV analysis — 15-minute analysis, key strengths, 3 improvement areas, industry/role matching, salary benchmark range, skill gap analysis (3 skills), LinkedIn profile optimization, 90-day action plan</li>
+                    <li><strong>File Format:</strong> .docx or .xlsx (not markdown — all 6 files already converted and verified)</li>
+                    <li><strong>Delivery:</strong> Within 5 business days of resume receipt + payment</li>
+                    <li><strong>No Track Backs:</strong> Exactly as agreed: one-and-done engagement. No follow-up emails, no check-ins, no ongoing support. After report delivery + one optional revision (within 7 days, max 30-minute adjustment), engagement is complete.</li>
+                    <li><strong>Upsell:</strong> If client wants more → Offer Plan A Tier 1 (₹28,750) if client is a founder seeking brand strategy.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans">
+        <h2>Plan Comparison</h2>
+        <div class="grid-3">
+            <div class="card" style="background: var(--obsidian-black); color: var(--cloud-white);">
+                <h3>Plan A: Business</h3>
+                <p>Startups & SMEs in India — 3 avatar segments (Curious Founder <10L ARR, Growth-Seeking SME 10L-50L ARR, Established Player 50L-2Cr+ ARR)</p>
+                <p>Google search client acquisition via 10 keywords, 30+ businesses identified</p>
+                <p>50% introductory rates for first 3 clients</p>
+                <p>No monthly recurring charges at any tier</p>
+            </div>
+            <div class="card" style="background: var(--obsidian-black); color: var(--cloud-white);">
+                <h3>Plan B: Individual</h3>
+                <p>Job seekers, professionals seeking career growth, low-pay workers wanting to switch roles</p>
+                <p>₹2,500 one-time upfront — single payment, no monthly commitments</p>
+                <p>No track backs — one-and-done engagement</p>
+                <p>File format: .docx or .xlsx only</p>
+            </div>
+            <div class="card" style="background: var(--growth-green); color: var(--obsidian-black);">
+                <h3>Pilot Program</h3>
+                <p>3-5 business clients (Months 1-3): work free initially until growth demonstrated, then charge based on milestones (revenue growth ≥20% MoM, client acquisition, operational efficiency, team scalability, value perception ≥7/10)</p>
+                <p>First 10 individual clients (Plan B) at ₹2,500 introductory rate. After 10 clients, rate review: ₹3,000 or ₹4,000.</p>
+                <p>Minimum 3 research channels represented in pilot intake</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Maanro</h2>
+        <p>Email: <a href="mailto:maanroadvertising@gmail.com">maanroadvertising@gmail.com</a></p>
+        <p>Hybrid email setup: Anonymous IMAP read-only mode for reading incoming emails + Gmail REST API for sending FROM maanroadvertising@gmail.com (tested successful, Message ID: 1a1f37c0bfe0c392)</p>
+
+        <form class="contact-form" action="#">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Which Plan Are You Interested In?</label>
+                <select required>
+                    <option value="">Select...</option>
+                    <option value="plan-a">Plan A: Business (Three-Tier Model)</option>
+                    <option value="plan-b">Plan B: Individual (₹2,500 Resume Analysis)</option>
+                </select>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Maanro - AI-Powered Brand Growth & Strategies Company. All rights reserved.</p>
+        <p>Brand Colours: Obsidian Black #080808 + Growth Green #32CD32 | Tagline: Grow with Honour. Scale with Intelligence.</p>
+    </footer>
+
+</body>
+</html>
